@@ -74,4 +74,17 @@ public class Student {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "lastname='" + lastname + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", group='" + group + '\'' +
+                ", socialCategory='" + socialCategory + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }
