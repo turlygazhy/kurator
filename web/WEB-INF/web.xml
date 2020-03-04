@@ -15,4 +15,14 @@
         <url-pattern>/students</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>kurators</servlet-name>
+        <servlet-class>app.servlets.KuratorsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>kurators</servlet-name>
+        <url-pattern>/kurators</url-pattern>
+    </servlet-mapping>
+
 </web-app>
