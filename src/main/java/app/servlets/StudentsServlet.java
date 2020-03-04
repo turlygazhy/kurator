@@ -16,7 +16,7 @@ public class StudentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Model model = Model.getInstance();
-        List<Student> students = model.list();
+        List<Student> students = model.getStudents();
         req.setAttribute("students", students);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/students.jsp");

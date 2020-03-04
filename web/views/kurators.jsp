@@ -15,6 +15,13 @@
 <div>
     <h1>Кураторские часы</h1>
 </div>
+<%--todo need to button for deleting--%>
+<form method="post">
+    <label>Отчет:
+        <input type="text" name="report"><br />
+    </label>
+    <button type="submit">Submit</button>
+</form>
 <%--todo need to show list and input for adding--%>
 <p/>
 <div>    <!-- buttons holder -->

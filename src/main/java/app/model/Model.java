@@ -15,7 +15,7 @@ public class Model {
     private Model() {
     }
 
-    public List<Student> list() {
+    public List<Student> getStudents() {
         // TODO: 01.03.20 need to get it from DB
         return Arrays.asList(
                 new Student("фамилия1", "имя1", "отчество1", "группа1", "социальная категория", "адрес1", "123456"),
