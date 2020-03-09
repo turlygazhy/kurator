@@ -1,5 +1,7 @@
 package app.servlets;
 
+import app.dao.DaoFactory;
+import app.dao.impl.KuratorDao;
 import app.entities.Student;
 import app.model.Model;
 
@@ -12,6 +14,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class KuratorsServlet extends HttpServlet {
+    private DaoFactory factory = DaoFactory.getFactory();
+    private KuratorDao kuratorDao = factory.getKuratorDao();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
