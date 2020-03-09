@@ -1,8 +1,6 @@
 package app.servlets;
 
-import app.dao.DaoFactory;
-import app.dao.impl.KuratorDao;
-import app.entities.Student;
+import app.entities.Kurator;
 import app.model.Model;
 
 import javax.servlet.RequestDispatcher;
@@ -14,19 +12,16 @@ import java.io.IOException;
 import java.util.List;
 
 public class KuratorsServlet extends HttpServlet {
-    private DaoFactory factory = DaoFactory.getFactory();
-    private KuratorDao kuratorDao = factory.getKuratorDao();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Model model = Model.getInstance();
-        model.getKurators();
-//        List<Student> students = model.getStudents();
-//        req.setAttribute("students", students);
-//
-//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/students.jsp");
-//        requestDispatcher.forward(req, resp);
+        List<Kurator> kurators = model.getKurators();
+        req.setAttribute("kurators", kurators);
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/kurators.jsp");
+        requestDispatcher.forward(req, resp);
     }
 }

@@ -15,6 +15,7 @@
 <div>
     <h1>Кураторские часы</h1>
 </div>
+<%--todo need to show list and input for adding--%>
 <%--todo need to button for deleting--%>
 <form method="post">
     <label>Отчет:
@@ -22,7 +23,6 @@
     </label>
     <button type="submit">Submit</button>
 </form>
-<%--todo need to show list and input for adding--%>
 <p/>
 <div>    <!-- buttons holder -->
     <button onclick="location.href='/'">На главную страницу</button>

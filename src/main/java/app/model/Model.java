@@ -1,5 +1,8 @@
 package app.model;
 
+import app.dao.DaoFactory;
+import app.dao.impl.KuratorDao;
+import app.entities.Kurator;
 import app.entities.Student;
 
 import java.util.Arrays;
@@ -7,6 +10,9 @@ import java.util.List;
 
 public class Model {
     private static Model instance = new Model();
+
+    private DaoFactory factory = DaoFactory.getFactory();
+    private KuratorDao kuratorDao = factory.getKuratorDao();
 
     public static Model getInstance() {
         return instance;
@@ -26,7 +32,7 @@ public class Model {
         );
     }
 
-    public void getKurators() {
-        // TODO: 07.03.20  
+    public List<Kurator> getKurators() {
+        return kuratorDao.selectAll();
     }
 }
