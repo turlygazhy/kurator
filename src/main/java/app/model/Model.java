@@ -16,7 +16,7 @@ public class Model {
     }
 
     public List<Student> getStudents() {
-        // TODO: 01.03.20 need to get it from DB
+        // TODO: 09.03.20 fill real names
         return Arrays.asList(
                 new Student("фамилия1", "имя1", "отчество1", "группа1", "социальная категория", "адрес1", "123456"),
                 new Student("фамилия2", "имя2", "отчество2", "группа1", "социальная категория", "адрес2", "123456"),
@@ -24,5 +24,9 @@ public class Model {
                 new Student("фамилия4", "имя4", "отчество4", "группа1", "социальная категория", "адрес4", "123456"),
                 new Student("фамилия5", "имя5", "отчество5", "группа1", "социальная категория", "адрес5", "123456")
         );
+    }
+
+    public void getKurators() {
+        // TODO: 07.03.20  
     }
 }

@@ -14,12 +14,11 @@ import java.util.List;
 public class KuratorsServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println();// TODO: 04.03.20 delete line
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Model model = Model.getInstance();
-model.getKurators();// TODO: 04.03.20
+        model.getKurators();
 //        List<Student> students = model.getStudents();
 //        req.setAttribute("students", students);
 //
