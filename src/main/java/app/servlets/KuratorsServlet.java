@@ -12,12 +12,16 @@ import java.io.IOException;
 import java.util.List;
 
 public class KuratorsServlet extends HttpServlet {
+    private Model model = Model.getInstance();
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String topic = req.getParameter("topic");
+        String report = req.getParameter("report");
+        model.addKurator(new Kurator(topic, report));
+        doGet(req, resp);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Model model = Model.getInstance();
         List<Kurator> kurators = model.getKurators();
         req.setAttribute("kurators", kurators);
 

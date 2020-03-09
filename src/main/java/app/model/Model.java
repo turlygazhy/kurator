@@ -35,4 +35,8 @@ public class Model {
     public List<Kurator> getKurators() {
         return kuratorDao.selectAll();
     }
+
+    public void addKurator(Kurator kurator) {
+        kuratorDao.insert(kurator);
+    }
 }

@@ -24,10 +24,22 @@ public class KuratorDao {
             List<Kurator> kurators = new ArrayList<>();
             while (rs.next()) {
                 int id = rs.getInt(1);
-                String text = rs.getString(2);
-                kurators.add(new Kurator(id, text));
+                String topic = rs.getString(2);
+                String text = rs.getString(3);
+                kurators.add(new Kurator(id, topic, text));
             }
             return kurators;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void insert(Kurator kurator) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO kurator VALUES(default, ?, ?)");
+            ps.setString(1, kurator.getTopic());
+            ps.setString(2, kurator.getText());
+            ps.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

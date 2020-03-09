@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="app.entities.Student" %><%--
+<%@ page import="app.entities.Student" %>
+<%@ page import="app.entities.Kurator" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 01.03.20
@@ -15,13 +16,40 @@
 <div>
     <h1>Кураторские часы</h1>
 </div>
-<%--todo need to show list and input for adding--%>
+<%
+    List<Kurator> kurators = (List<Kurator>) request.getAttribute("kurators");
+
+    if (kurators.isEmpty()) {
+        /*todo*/
+    } else {
+        out.println("<table border=\"1\">");
+        out.println("<caption>Кураторские часы</caption>");
+        out.println("<tr>\n" +
+                "    <th>№</th>\n" +
+                "    <th>Тема</th>\n" +
+                "    <th>Текст</th>\n" +
+                "   </tr>");
+        for (Kurator kurator : kurators) {
+            out.println(String.format("<tr ><td >%s</td >" +
+                            "<td >%s</td >" +
+                            "<td >%s</td >" +
+                            "</tr >", kurator.getId(),
+                    kurator.getTopic(),
+                    kurator.getText()));
+        }
+        out.println("</table>");
+    }
+%>
 <%--todo need to button for deleting--%>
+<p/>
 <form method="post">
-    <label>Отчет:
-        <input type="text" name="report"><br />
+    <label>Тема:
+        <input type="text" name="topic"><br/>
     </label>
-    <button type="submit">Submit</button>
+    <label>Отчет:
+        <input type="text" name="report"><br/>
+    </label>
+    <button type="submit">Добавить</button>
 </form>
 <p/>
 <div>    <!-- buttons holder -->
