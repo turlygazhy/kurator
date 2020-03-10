@@ -44,4 +44,14 @@ public class KuratorDao {
             throw new RuntimeException(e);
         }
     }
+
+    public void delete(int deleteId) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM kurator WHERE ID=?");
+            ps.setInt(1, deleteId);
+            ps.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -55,4 +55,8 @@ public class Model {
     public void setLoginedUser(LoginedUser loginedUser) {
         this.loginedUser = loginedUser;
     }
+
+    public void deleteKurator(int deleteId) {
+        kuratorDao.delete(deleteId);
+    }
 }

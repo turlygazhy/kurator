@@ -23,25 +23,27 @@
     <div class="w3-container w3-padding">
         <%
             List<Kurator> kurators = (List<Kurator>) request.getAttribute("kurators");
-
+            out.println("<table class=\"w3-table-all\">");
+            out.println("<caption>Кураторские часы</caption>");
+            out.println("<tr>\n" +
+                    "    <th>№</th>\n" +
+                    "    <th>Тема</th>\n" +
+                    "    <th>Текст</th>\n" +
+                    "    <th></th>\n" +
+                    "   </tr>");
             if (kurators.isEmpty()) {
-                /*todo*/
+                out.println("Нет добавленных кураторских часов");
             } else {
-                out.println("<table class=\"w3-table-all\">");
-                out.println("<caption>Кураторские часы</caption>");
-                out.println("<tr>\n" +
-                        "    <th>№</th>\n" +
-                        "    <th>Тема</th>\n" +
-                        "    <th>Текст</th>\n" +
-                        "   </tr>");
                 int i = 1;
                 for (Kurator kurator : kurators) {
                     out.println(String.format("<tr ><td >%s</td >" +
                                     "<td >%s</td >" +
                                     "<td >%s</td >" +
+                                    "<td ><form method=\"post\"><input type=\"hidden\" name=\"delete\" value=\"%d\"/> <input type=\"submit\" value=\"Удалить\"/></form></td >" +
                                     "</tr >", i,
                             kurator.getTopic(),
-                            kurator.getText()));
+                            kurator.getText(),
+                            kurator.getId()));
                     i++;
                 }
                 out.println("</table>");
@@ -49,7 +51,6 @@
         %>
     </div>
 </div>
-<%--todo need to button for deleting--%>
 <p/>
 <div>
     <form method="post" class="w3-selection w3-light-grey w3-padding"

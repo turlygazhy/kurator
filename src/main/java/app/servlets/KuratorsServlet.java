@@ -12,6 +12,12 @@ import java.util.List;
 public class KuratorsServlet extends MyServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String deleteId = req.getParameter("delete");
+        if (deleteId != null) {
+            model.deleteKurator(Integer.parseInt(deleteId));
+            doGet(req, resp);
+            return;
+        }
         String topic = req.getParameter("topic");
         String report = req.getParameter("report");
         model.addKurator(new Kurator(topic, report));
