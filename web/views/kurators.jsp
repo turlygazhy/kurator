@@ -1,6 +1,6 @@
+<%@ page import="app.entities.Kurator" %>
 <%@ page import="java.util.List" %>
-<%@ page import="app.entities.Student" %>
-<%@ page import="app.entities.Kurator" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: user
   Date: 01.03.20

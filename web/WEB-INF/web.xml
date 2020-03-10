@@ -12,7 +12,6 @@
         <servlet-name>students</servlet-name>
         <servlet-class>app.servlets.StudentsServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>students</servlet-name>
         <url-pattern>/students</url-pattern>
@@ -22,10 +21,36 @@
         <servlet-name>kurators</servlet-name>
         <servlet-class>app.servlets.KuratorsServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>kurators</servlet-name>
         <url-pattern>/kurators</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>events</servlet-name>
+        <servlet-class>app.servlets.EventsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>events</servlet-name>
+        <url-pattern>/events</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>notifications</servlet-name>
+        <servlet-class>app.servlets.NotificationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>notifications</servlet-name>
+        <url-pattern>/notifications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>questionaries</servlet-name>
+        <servlet-class>app.servlets.QuestionariesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>questionaries</servlet-name>
+        <url-pattern>/questionaries</url-pattern>
     </servlet-mapping>
 
 </web-app>

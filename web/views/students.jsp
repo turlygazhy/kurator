@@ -54,7 +54,9 @@
 </div>
 <p/>
 <div>    <!-- buttons holder -->
-    <button onclick="location.href='/'" class="w3-btn w3-hover-light-blue w3-round-large w3-border-red w3-round-large">На главную страницу</button>
+    <button onclick="location.href='/'" class="w3-btn w3-hover-light-blue w3-round-large w3-border-red w3-round-large">
+        На главную страницу
+    </button>
 </div>
 </body>
 </html>
