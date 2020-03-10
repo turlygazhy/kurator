@@ -16,6 +16,7 @@ public class Model {
     private DaoFactory factory = DaoFactory.getFactory();
     private KuratorDao kuratorDao = factory.getKuratorDao();
     private UserDao userDao = factory.getUserDao();
+    private LoginedUser loginedUser;
 
     public static Model getInstance() {
         return instance;
@@ -45,5 +46,13 @@ public class Model {
 
     public LoginedUser getUser(String username) {
         return userDao.select(username);
+    }
+
+    public LoginedUser getLoginedUser() {
+        return loginedUser;
+    }
+
+    public void setLoginedUser(LoginedUser loginedUser) {
+        this.loginedUser = loginedUser;
     }
 }

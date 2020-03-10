@@ -24,6 +24,7 @@ public class IndexServlet extends MyServlet {
                 throw new RuntimeException("not correct password");
             }
             req.setAttribute(LOGINED_USER_ATTRIBUTE, user);
+            model.setLoginedUser(user);
             doGet(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
@@ -32,11 +33,12 @@ public class IndexServlet extends MyServlet {
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LoginedUser loginedUser = (LoginedUser) req.getAttribute(LOGINED_USER_ATTRIBUTE);
+        LoginedUser loginedUser = model.getLoginedUser();
         RequestDispatcher requestDispatcher;
         if (loginedUser == null) {
             requestDispatcher = req.getRequestDispatcher("views/login.jsp");
         } else {
+            req.setAttribute(LOGINED_USER_ATTRIBUTE, loginedUser);
             requestDispatcher = req.getRequestDispatcher("index.jsp");
         }
         requestDispatcher.forward(req, resp);
