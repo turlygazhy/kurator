@@ -52,7 +52,11 @@
 <%--todo need to button for deleting--%>
 <p/>
 <div>
-    <form method="post" class="w3-selection w3-light-grey w3-padding">
+    <form method="post" class="w3-selection w3-light-grey w3-padding"
+          style="border: 2px solid limegreen; border-radius: 10px;">
+        <div>
+            <h2>Добавить новый отчет</h2>
+        </div>
         <label>Тема:
             <input type="text" name="topic" class="w3-input w3-animate-input w3-border w3-round-large"
                    style="width: 30%"><br/>
