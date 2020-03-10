@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Сайт куратора</title>
-    <link rel="stylesheet" href="styles/w3.css">
-</head>
-<body class="w3-light-grey">
-<!-- header -->
-<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>Сайт куратора</h1>
-</div>
-
+<%@tag pageEncoding="UTF-8" %>
+<html>
+<body>
 <div class="w3-bar w3-green w3-container w3-center"> <!--todo navigation bar in every page-->
     <button onclick="location.href='/students'"
             class="w3-btn w3-hover-green w3-round-large w3-bar-item">Мои студенты

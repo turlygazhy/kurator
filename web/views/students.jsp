@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %>
 <html>
 <head>
     <title>Мои студенты</title>
@@ -16,6 +17,7 @@
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <h1>Мои студенты</h1>
 </div>
+<mytags:navbar/>
 <div class="w3-container w3-padding">
     <%
         List<Student> students = (List<Student>) request.getAttribute("students");
