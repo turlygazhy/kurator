@@ -1,3 +1,5 @@
+<%@ page import="app.servlets.IndexServlet" %>
+<%@ page import="app.entities.LoginedUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %>
 <html lang="en">
@@ -12,5 +14,9 @@
     <h1>Сайт куратора</h1><%--todo need to log in--%>
 </div>
 <mytags:navbar/>
+<%
+    LoginedUser user = (LoginedUser) request.getAttribute(IndexServlet.LOGINED_USER_ATTRIBUTE);
+    out.println("hi " + user.getFullname());/*todo*/
+%>
 </body>
 </html>

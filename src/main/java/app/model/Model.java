@@ -2,7 +2,9 @@ package app.model;
 
 import app.dao.DaoFactory;
 import app.dao.impl.KuratorDao;
+import app.dao.impl.UserDao;
 import app.entities.Kurator;
+import app.entities.LoginedUser;
 import app.entities.Student;
 
 import java.util.Arrays;
@@ -13,6 +15,7 @@ public class Model {
 
     private DaoFactory factory = DaoFactory.getFactory();
     private KuratorDao kuratorDao = factory.getKuratorDao();
+    private UserDao userDao = factory.getUserDao();
 
     public static Model getInstance() {
         return instance;
@@ -38,5 +41,9 @@ public class Model {
 
     public void addKurator(Kurator kurator) {
         kuratorDao.insert(kurator);
+    }
+
+    public LoginedUser getUser(String username) {
+        return userDao.select(username);
     }
 }

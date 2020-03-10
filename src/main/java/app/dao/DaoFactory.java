@@ -2,6 +2,7 @@ package app.dao;
 
 import app.connection_pool.ConnectionPool;
 import app.dao.impl.KuratorDao;
+import app.dao.impl.UserDao;
 
 import java.sql.Connection;
 
@@ -23,5 +24,9 @@ public class DaoFactory {
 
     public KuratorDao getKuratorDao() {
         return new KuratorDao(connection);
+    }
+
+    public UserDao getUserDao() {
+        return new UserDao(connection);
     }
 }
