@@ -1,8 +1,10 @@
 package app.model;
 
 import app.dao.DaoFactory;
+import app.dao.impl.EventDao;
 import app.dao.impl.KuratorDao;
 import app.dao.impl.UserDao;
+import app.entities.Event;
 import app.entities.Kurator;
 import app.entities.LoginedUser;
 import app.entities.Student;
@@ -15,6 +17,7 @@ public class Model {
 
     private DaoFactory factory = DaoFactory.getFactory();
     private KuratorDao kuratorDao = factory.getKuratorDao();
+    private EventDao eventDao = factory.getEventDao();
     private UserDao userDao = factory.getUserDao();
     private LoginedUser loginedUser;
 
@@ -58,5 +61,9 @@ public class Model {
 
     public void deleteKurator(int deleteId) {
         kuratorDao.delete(deleteId);
+    }
+
+    public List<Event> getEvents() {
+        return eventDao.selectAll();
     }
 }

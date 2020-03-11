@@ -1,5 +1,7 @@
 <!--todo информирования о мероприятиях, конкурсах, проектах-->
-<%--todo возможность удалять мероприятия--%>
+<%--todo держать в бд--%>
+<%--todo возможность удалять мероприятия                                     "<td ><form method=\"post\"><input type=\"hidden\" name=\"delete\" value=\"%d\"/> <input type=\"submit\" value=\"Удалить\"/></form></td >" +
+--%>
 <%--todo сделать текст красивее--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %>
@@ -28,16 +30,8 @@
 <mytags:navbar/>
 <div class="block-round">
     <span class="r1"></span><span class="r2"></span><span class="r3"></span>
-    <div class="block-round-content">
+    <div class="block-round-content"><%--todo take from events--%>
         <h2>Мероприятие 1</h2>
-        лваыодвалоывджоалывожалджы овлаожывлаоыв доал ывджоалыв джола
-        аол ывджао лывдоа лывджоал джывоалд овы д
-        ао ывлдаж олывд ожалдывжоа лывджоа лывдожа дыл
-    </div>
-    <span class="r3"></span><span class="r2"></span><span class="r1"></span>
-    <span class="r1"></span><span class="r2"></span><span class="r3"></span>
-    <div class="block-round-content">
-        <h2>Мероприятие 2</h2>
         лваыодвалоывджоалывожалджы овлаожывлаоыв доал ывджоалыв джола
         аол ывджао лывдоа лывджоал джывоалд овы д
         ао ывлдаж олывд ожалдывжоа лывджоа лывдожа дыл

@@ -1,6 +1,7 @@
 package app.dao;
 
 import app.connection_pool.ConnectionPool;
+import app.dao.impl.EventDao;
 import app.dao.impl.KuratorDao;
 import app.dao.impl.UserDao;
 
@@ -28,5 +29,9 @@ public class DaoFactory {
 
     public UserDao getUserDao() {
         return new UserDao(connection);
+    }
+
+    public EventDao getEventDao() {
+        return new EventDao(connection);
     }
 }
