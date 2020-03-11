@@ -12,9 +12,11 @@ import java.util.List;
 
 public class EventsServlet extends MyServlet {
 
+    public static final String EVENTS_ATTRIBUTE = "events";
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Event> events = model.getEvents();
-        req.setAttribute("events", events);
+        req.setAttribute(EVENTS_ATTRIBUTE, events);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/events.jsp");
         requestDispatcher.forward(req, resp);

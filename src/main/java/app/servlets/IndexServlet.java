@@ -13,6 +13,7 @@ import java.io.IOException;
 public class IndexServlet extends MyServlet {
 
     public static final String LOGINED_USER_ATTRIBUTE = "loginedUser";
+    public static final String LOGIN_ERROR = "loginError";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,7 +29,8 @@ public class IndexServlet extends MyServlet {
             doGet(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
-            // TODO: 10.03.20 send error
+            req.setAttribute(LOGIN_ERROR, true);
+            req.getRequestDispatcher("views/login.jsp").forward(req, resp);
         }
     }
 

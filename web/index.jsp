@@ -11,7 +11,7 @@
 <body class="w3-light-grey">
 <!-- header -->
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>Сайт куратора</h1><%--todo need to log in--%>
+    <h1>Сайт куратора</h1>
 </div>
 <mytags:navbar/>
 <%

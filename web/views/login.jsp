@@ -1,3 +1,4 @@
+<%@ page import="app.servlets.IndexServlet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -88,6 +89,11 @@
         <button type="submit">Login</button>
     </div>
 </form>
+<%
+    if (request.getAttribute(IndexServlet.LOGIN_ERROR) != null) {
+        out.println("<div style=\"color:red\">Не правильный логин или пароль!</div>");
+    }
+%>
 
 </body>
 </html>

@@ -2,16 +2,16 @@ package app.entities;
 
 public class Event {
     private int id;
-    private String text;
     private String topic;
+    private String text;
 
     public Event() {
     }
 
-    public Event(int id, String text, String topic) {
+    public Event(int id, String topic, String text) {
         this.id = id;
-        this.text = text;
         this.topic = topic;
+        this.text = text;
     }
 
     public int getId() {
