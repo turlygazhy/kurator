@@ -1,21 +1,16 @@
 <%@ page import="app.servlets.EventsServlet" %>
 <%@ page import="app.entities.Event" %>
 <%@ page import="java.util.List" %>
-<!--todo информирования о мероприятиях, конкурсах, проектах-->
-<%--todo возможность удалять мероприятия                                     "<td ><form method=\"post\"><input type=\"hidden\" name=\"delete\" value=\"%d\"/> <input type=\"submit\" value=\"Удалить\"/></form></td >" --%>
-<%--todo возможность добавлять--%>
-<%--todo сделать текст красивее--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %>
 <html>
 <head>
-    <title>Мероприятия</title>
+    <title>Мероприятия</title><%--информирования о мероприятиях, конкурсах, проектах--%>
     <link rel="stylesheet" href="styles/w3.css">
     <style type="text/css">
         .r1, .r2, .r3 {
             display: block;
             height: 1px;
-            background: #7da7d9;
             overflow: hidden;
         }
 
@@ -33,9 +28,12 @@
         }
 
         .block-round-content {
-            background: #7da7d9; /* Цвет фона */
-            color: #fff;
             padding: 10px; /*  Поля вокруг текста */
+        }
+
+        .btn {
+            float: right;
+            margin-right: 20px;
         }
     </style>
 </head>
@@ -56,11 +54,33 @@
                                 "    <h2>%s</h2>\n" +
                                 "    %s" +
                                 "</div>\n" +
+                                "<td ><form method=\"post\"><input type=\"hidden\" name=\"delete\" value=\"%d\"/> <input type=\"submit\" value=\"Удалить\" class=\"btn\"/></form></td >" +
                                 "<span class=\"r3\"></span><span class=\"r2\"></span><span class=\"r1\"></span>",
-                        event.getTopic(), event.getText()));
+                        event.getTopic(), event.getText(), event.getId()));
             }
         }
     %>
 </div>
+<p/>
+<p/>
+<div>
+    <form method="post" class="w3-selection w3-light-grey w3-padding"
+          style="border: 2px solid limegreen; border-radius: 10px;">
+        <div>
+            <h2>Добавить новое мероприятие</h2>
+        </div>
+        <label>Тема:
+            <input type="text" name="topic" class="w3-input w3-animate-input w3-border w3-round-large"
+                   style="width: 30%"><br/>
+        </label>
+        <label>Отчет:
+            <input type="text" name="report" class="w3-input w3-animate-input w3-border w3-round-large"
+                   style="width: 30%"><br/>
+        </label>
+        <button type="submit" class="w3-btn w3-hover-light-blue w3-border-red w3-round-large">Добавить
+        </button>
+    </form>
+</div>
+
 </body>
 </html>

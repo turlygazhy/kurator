@@ -21,4 +21,18 @@ public class EventsServlet extends MyServlet {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/events.jsp");
         requestDispatcher.forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String deleteId = req.getParameter("delete");
+        if (deleteId != null) {
+            model.deleteEvent(Integer.parseInt(deleteId));
+            doGet(req, resp);
+            return;
+        }
+        String topic = req.getParameter("topic");
+        String report = req.getParameter("report");
+        model.addEvent(new Event(topic, report));
+        doGet(req, resp);
+    }
 }

@@ -32,6 +32,26 @@ public class EventDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    public void insert(Event event) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO event VALUES(default, ?, ?)");
+            ps.setString(1, event.getTopic());
+            ps.setString(2, event.getText());
+            ps.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void delete(int id) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM event WHERE ID=?");
+            ps.setInt(1, id);
+            ps.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

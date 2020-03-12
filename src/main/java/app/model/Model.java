@@ -65,4 +65,12 @@ public class Model {
     public List<Event> getEvents() {
         return eventDao.selectAll();
     }
+
+    public void addEvent(Event event) {
+        eventDao.insert(event);
+    }
+
+    public void deleteEvent(int id) {
+        eventDao.delete(id);
+    }
 }

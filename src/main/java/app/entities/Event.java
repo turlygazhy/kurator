@@ -8,6 +8,11 @@ public class Event {
     public Event() {
     }
 
+    public Event(String topic, String text) {
+        this.topic = topic;
+        this.text = text;
+    }
+
     public Event(int id, String topic, String text) {
         this.id = id;
         this.topic = topic;
