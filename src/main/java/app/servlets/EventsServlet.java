@@ -1,7 +1,6 @@
 package app.servlets;
 
 import app.entities.Event;
-import app.entities.Kurator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

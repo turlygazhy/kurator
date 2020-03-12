@@ -1,7 +1,6 @@
 package app.servlets;
 
 import app.entities.Student;
-import app.model.Model;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

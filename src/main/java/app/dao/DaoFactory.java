@@ -3,6 +3,7 @@ package app.dao;
 import app.connection_pool.ConnectionPool;
 import app.dao.impl.EventDao;
 import app.dao.impl.KuratorDao;
+import app.dao.impl.NotificationDao;
 import app.dao.impl.UserDao;
 
 import java.sql.Connection;
@@ -33,5 +34,9 @@ public class DaoFactory {
 
     public EventDao getEventDao() {
         return new EventDao(connection);
+    }
+
+    public NotificationDao getNotificationDao() {
+        return new NotificationDao(connection);
     }
 }

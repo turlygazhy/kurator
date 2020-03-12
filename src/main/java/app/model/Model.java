@@ -3,11 +3,9 @@ package app.model;
 import app.dao.DaoFactory;
 import app.dao.impl.EventDao;
 import app.dao.impl.KuratorDao;
+import app.dao.impl.NotificationDao;
 import app.dao.impl.UserDao;
-import app.entities.Event;
-import app.entities.Kurator;
-import app.entities.LoginedUser;
-import app.entities.Student;
+import app.entities.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +17,7 @@ public class Model {
     private KuratorDao kuratorDao = factory.getKuratorDao();
     private EventDao eventDao = factory.getEventDao();
     private UserDao userDao = factory.getUserDao();
+    private NotificationDao notificationDao = factory.getNotificationDao();
     private LoginedUser loginedUser;
 
     public static Model getInstance() {
@@ -72,5 +71,9 @@ public class Model {
 
     public void deleteEvent(int id) {
         eventDao.delete(id);
+    }
+
+    public List<Notification> getNotifications() {
+        return notificationDao.selectAll();
     }
 }
