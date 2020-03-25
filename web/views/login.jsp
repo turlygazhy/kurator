@@ -91,7 +91,7 @@
 </form>
 <%
     if (request.getAttribute(IndexServlet.LOGIN_ERROR) != null) {
-        out.println("<div style=\"color:red\">Не правильный логин или пароль!</div>");
+        out.println("<div style=\"color:red\">Неправильный логин или пароль!</div>");
     }
 %>
 
