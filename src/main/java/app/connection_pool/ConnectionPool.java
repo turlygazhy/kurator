@@ -25,9 +25,9 @@ public class ConnectionPool {
         try {
             //loading of class
             Class.forName("org.h2.Driver");
-            logger.info("�������� \"org.h2.Driver\" ���������.");
+            logger.info("Loading \"org.h2.Driver\" class.");
         } catch (ClassNotFoundException e) {
-            logger.info("����� \"org.h2.Driver\" �� ������.");
+            logger.info("Could not load \"org.h2.Driver\" class.");
             throw new RuntimeException(e);
         }
         Connection connection;
@@ -54,7 +54,7 @@ public class ConnectionPool {
         try {
             //try get connection with 5 seconds waiting //��������� ������������
             connection = connections.poll(5, TimeUnit.SECONDS);
-            logger.debug(connection + " �������.");
+            logger.debug(connection + "added.");
         } catch (InterruptedException e) {
             logger.info("InterruptedException.");
             throw new RuntimeException(e);
