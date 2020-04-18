@@ -63,6 +63,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>addStudent</servlet-name>
+        <servlet-class>app.servlets.AddStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addStudent</servlet-name>
+        <url-pattern>/addStudent</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>app.servlets.IndexServlet</servlet-class>
     </servlet>

@@ -28,9 +28,14 @@
                 "    <th>Фамилия</th>\n" +
                 "    <th>Имя</th>\n" +
                 "    <th>Отчество</th>\n" +
+                "    <th>Национальность</th>\n" +
+                "    <th>Гражданство</th>\n" +
+                "    <th>Адрес прописки</th>\n" +
+                "    <th>Адрес текущего места жительства</th>\n" +
+                "    <th>Социальная категория</th>\n" +
+                "    <th>Семейный статус студента</th>\n" +
+                "    <th>Наличие детей у студента</th>\n" +
                 "    <th>Группа</th>\n" +
-                "    <th>Социальная категория</th>\n" +/*todo dropdown: из многодетной семьи, сирота, инвалид*/
-                "    <th>Адрес</th>\n" +/*todo разделить адрес, можно выбирать из дропдауна область и город*/
                 "    <th>Телефон</th>\n" +
                 "   </tr>");
         for (Student student : students) {
@@ -51,11 +56,11 @@
         }
         out.println("</table>");
     %>
-</div>
+</div><%--todo add button--%>
 <p/>
 <div>    <!-- buttons holder -->
-    <button onclick="location.href='/'" class="w3-btn w3-hover-light-blue w3-round-large w3-border-red w3-round-large">
-        На главную страницу
+    <button onclick="location.href='/addStudent'" class="w3-btn w3-hover-light-blue w3-round-large w3-border-red w3-round-large">
+        Добавить студента
     </button>
 </div>
 </body>
