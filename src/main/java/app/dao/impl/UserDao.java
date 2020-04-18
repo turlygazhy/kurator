@@ -28,6 +28,7 @@ public class UserDao {
             loginedUser.setPassword(rs.getString(3));
             loginedUser.setFullname(rs.getString(4));
             loginedUser.setGroup(rs.getString(5));
+            loginedUser.setUserType(rs.getInt(6));
             return loginedUser;
         } catch (SQLException e) {
             throw new RuntimeException(e);

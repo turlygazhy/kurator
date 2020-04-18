@@ -38,7 +38,7 @@
                 for (Kurator kurator : kurators) {
                     out.println(String.format("<tr ><td >%s</td >" +
                                     "<td >%s</td >" +
-                                    "<td >%s</td >" +
+                                    "<td >%s</td >" +/*todo make editable: Править*/
                                     "<td ><form method=\"post\"><input type=\"hidden\" name=\"delete\" value=\"%d\"/> <input type=\"submit\" value=\"Удалить\"/></form></td >" +
                                     "</tr >", i,
                             kurator.getTopic(),

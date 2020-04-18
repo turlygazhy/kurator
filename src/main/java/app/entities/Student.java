@@ -87,4 +87,45 @@ public class Student {
                 ", phone='" + phone + '\'' +
                 '}';
     }
+
+    public enum Gender {
+        MALE(1), FEMALE(2);
+
+        private final int genderId;
+
+        Gender(int genderId) {
+            this.genderId = genderId;
+        }
+    }
+
+    public enum LivingType {
+        WITH_PARENTS(1), WITH_RELATIVES(2), RENT(3), DORMITORY(4);
+
+        private final int livingTypeId;
+
+        LivingType(int livingTypeId) {
+            this.livingTypeId = livingTypeId;
+        }
+    }
+
+    public enum DormitoryType {
+        DORMITORY_ONE(1), ARMANDASTAR_ORDASY(2), SERPINDESTER_ORDASY(3), MGTK(4);
+
+        private final int dormitoryId;
+
+        DormitoryType(int dormitoryId) {
+            this.dormitoryId = dormitoryId;
+        }
+    }
+
+    public enum SocialCategory {
+        WITHOUT_PARENTS(1), WITHOUT_ONE_PARENT(2), INVALID_1(3),
+        INVALID_2(4), INVALID_3(5), BIG_FAMILY(6);
+
+        private final int socialCategoryId;
+
+        SocialCategory(int socialCategoryId) {
+            this.socialCategoryId = socialCategoryId;
+        }
+    }
 }

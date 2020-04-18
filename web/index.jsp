@@ -50,13 +50,13 @@
                     "<span class=\"r3\"></span>\n" +
                     "<div class=\"block-round-content\">\n" +
                     "    <p>ФИО: %s</p>\n" +
-                    "    <p>Группа: %s</p>\n" +
+                    "    <p>%s</p>\n" +
                     "</div>\n" +
                     "<span class=\"r3\"></span>\n" +
                     "<span class=\"r2\"></span>\n" +
                     "<span class=\"r1\"></span>",
             user.getFullname(),
-            user.getGroup()));
+            user.getTitle()));
 %>
 </body>
 </html>

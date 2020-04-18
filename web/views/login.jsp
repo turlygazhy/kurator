@@ -2,7 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-<head>
+<head><%--todo постоянно нужно знать кто залогинен--%>
+    <%--todo есть юзер куратор и суперюзер, который может видеть все
+    и этот суперюзер может слать уведомления на факультет на всех, наверное чекбоксом лучше--%>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {

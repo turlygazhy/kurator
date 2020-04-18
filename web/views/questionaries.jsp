@@ -2,7 +2,7 @@
 <%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %>
 <html>
 <head>
-    <title>Анкетирование</title>
+    <title>Анкетирование</title><%--todo analytics нужны чарты, пироги и тд--%>
     <link rel="stylesheet" href="styles/w3.css">
     <style type="text/css">
         .r1, .r2, .r3 {
