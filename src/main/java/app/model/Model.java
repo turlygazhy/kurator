@@ -7,8 +7,12 @@ import app.dao.impl.NotificationDao;
 import app.dao.impl.UserDao;
 import app.entities.*;
 
-import java.util.Arrays;
-import java.util.List;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class Model {
     private static Model instance = new Model();
@@ -69,5 +73,32 @@ public class Model {
 
     public List<Notification> getNotifications() {
         return notificationDao.selectAll();
+    }
+
+    public List<String> getNationalities() {
+        try {
+            URL res = getClass().getClassLoader().getResource("nationalities.txt");
+            File file = Paths.get(res.toURI()).toFile();
+            List<String> result = new ArrayList<>();
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                result.add(scanner.nextLine());
+            }
+            return result;
+        } catch (FileNotFoundException | URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<String> getCountries() {
+        List<String> result = new ArrayList<>();
+        result.add("Kazakhstan");
+        String[] locales = Locale.getISOCountries();
+
+        for (String countryCode : locales) {
+            Locale obj = new Locale("", countryCode);
+            result.add(obj.getDisplayCountry());
+        }
+        return result;
     }
 }
