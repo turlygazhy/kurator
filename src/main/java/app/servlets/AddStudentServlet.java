@@ -31,6 +31,8 @@ public class AddStudentServlet extends MyServlet {
         student.setDormitory(request.getParameter("dormitory"));
 
 //        student.setFilePropiska(request.getParameter("filePropiska"));
+//        student.setFileOplata(request.getParameter("fileOplata"));
+//        student.setFilePoliclinika(request.getParameter("filePoliclinika"));
         // TODO: 22.04.20 take files
         student.setSitota(request.getParameter("sirota"));
         student.setOpekaemii(request.getParameter("opekaemii"));
