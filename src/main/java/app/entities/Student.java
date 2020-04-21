@@ -1,131 +1,275 @@
 package app.entities;
 
 public class Student {
-    private String lastname;
-    private String firstname;
-    private String patronymic;
-    private String group;
-    private String socialCategory;
-    private String address;
+
+    private String lastName;
+    private String name;
+    private String patronomyc;
+    private String gender;
+    private String nationality;
     private String phone;
+    private String email;
+    private String parentPhone;
+    private String parentEmail;
+    private String district;
+    private String city;
+    private String address;
+    private String liveType;
+    private String dormitory;
+    private String sitota;
+    private String opekaemii;
+    private String withOutOneParent;
+    private String chellenged1;
+    private String chellenged2;
+    private String chellenged3;
+    private String bigFamily;
+    private String chellengedParents;
+    private String returned;
+    private String merried;
+    private String haveChild;
+    private String childCount;
+    private String religious;
+    private String religion;
+    private String dressR;
+    private String otherR;
 
-    public Student(String lastname, String firstname, String patronymic, String group, String socialCategory, String address, String phone) {
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.patronymic = patronymic;
-        this.group = group;
-        this.socialCategory = socialCategory;
-        this.address = address;
-        this.phone = phone;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setPatronomyc(String patronomyc) {
+        this.patronomyc = patronomyc;
     }
 
-    public String getPatronymic() {
-        return patronymic;
+    public String getPatronomyc() {
+        return patronomyc;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getGroup() {
-        return group;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
-    public String getSocialCategory() {
-        return socialCategory;
-    }
-
-    public void setSocialCategory(String socialCategory) {
-        this.socialCategory = socialCategory;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
+    public String getNationality() {
+        return nationality;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "lastname='" + lastname + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", patronymic='" + patronymic + '\'' +
-                ", group='" + group + '\'' +
-                ", socialCategory='" + socialCategory + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
+    public String getPhone() {
+        return phone;
     }
 
-    public enum Gender {
-        MALE(1), FEMALE(2);
-
-        private final int genderId;
-
-        Gender(int genderId) {
-            this.genderId = genderId;
-        }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public enum LivingType {
-        WITH_PARENTS(1), WITH_RELATIVES(2), RENT(3), DORMITORY(4);
-
-        private final int livingTypeId;
-
-        LivingType(int livingTypeId) {
-            this.livingTypeId = livingTypeId;
-        }
+    public String getEmail() {
+        return email;
     }
 
-    public enum DormitoryType {
-        DORMITORY_ONE(1), ARMANDASTAR_ORDASY(2), SERPINDESTER_ORDASY(3), MGTK(4);
-
-        private final int dormitoryId;
-
-        DormitoryType(int dormitoryId) {
-            this.dormitoryId = dormitoryId;
-        }
+    public void setParentPhone(String parentPhone) {
+        this.parentPhone = parentPhone;
     }
 
-    public enum SocialCategory {
-        WITHOUT_PARENTS(1), WITHOUT_ONE_PARENT(2), INVALID_1(3),
-        INVALID_2(4), INVALID_3(5), BIG_FAMILY(6);
+    public String getParentPhone() {
+        return parentPhone;
+    }
 
-        private final int socialCategoryId;
+    public void setParentEmail(String parentEmail) {
+        this.parentEmail = parentEmail;
+    }
 
-        SocialCategory(int socialCategoryId) {
-            this.socialCategoryId = socialCategoryId;
-        }
+    public String getParentEmail() {
+        return parentEmail;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setLiveType(String liveType) {
+        this.liveType = liveType;
+    }
+
+    public String getLiveType() {
+        return liveType;
+    }
+
+    public void setDormitory(String dormitory) {
+        this.dormitory = dormitory;
+    }
+
+    public String getDormitory() {
+        return dormitory;
+    }
+
+    public void setSitota(String sitota) {
+        this.sitota = sitota;
+    }
+
+    public String getSitota() {
+        return sitota;
+    }
+
+    public void setOpekaemii(String opekaemii) {
+        this.opekaemii = opekaemii;
+    }
+
+    public String getOpekaemii() {
+        return opekaemii;
+    }
+
+    public void setWithOutOneParent(String withOutOneParent) {
+        this.withOutOneParent = withOutOneParent;
+    }
+
+    public String getWithOutOneParent() {
+        return withOutOneParent;
+    }
+
+    public void setChellenged1(String chellenged1) {
+        this.chellenged1 = chellenged1;
+    }
+
+    public String getChellenged1() {
+        return chellenged1;
+    }
+
+    public void setChellenged2(String chellenged2) {
+        this.chellenged2 = chellenged2;
+    }
+
+    public String getChellenged2() {
+        return chellenged2;
+    }
+
+    public void setChellenged3(String chellenged3) {
+        this.chellenged3 = chellenged3;
+    }
+
+    public String getChellenged3() {
+        return chellenged3;
+    }
+
+    public void setBigFamily(String bigFamily) {
+        this.bigFamily = bigFamily;
+    }
+
+    public String getBigFamily() {
+        return bigFamily;
+    }
+
+    public void setChellengedParents(String chellengedParents) {
+        this.chellengedParents = chellengedParents;
+    }
+
+    public String getChellengedParents() {
+        return chellengedParents;
+    }
+
+    public void setReturned(String returned) {
+        this.returned = returned;
+    }
+
+    public String getReturned() {
+        return returned;
+    }
+
+    public void setMerried(String merried) {
+        this.merried = merried;
+    }
+
+    public String getMerried() {
+        return merried;
+    }
+
+    public void setHaveChild(String haveChild) {
+        this.haveChild = haveChild;
+    }
+
+    public String getHaveChild() {
+        return haveChild;
+    }
+
+    public void setChildCount(String childCount) {
+        this.childCount = childCount;
+    }
+
+    public String getChildCount() {
+        return childCount;
+    }
+
+    public void setReligious(String religious) {
+        this.religious = religious;
+    }
+
+    public String getReligious() {
+        return religious;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+
+    public String getReligion() {
+        return religion;
+    }
+
+    public void setDressR(String dressR) {
+        this.dressR = dressR;
+    }
+
+    public String getDressR() {
+        return dressR;
+    }
+
+    public void setOtherR(String otherR) {
+        this.otherR = otherR;
+    }
+
+    public String getOtherR() {
+        return otherR;
     }
 }

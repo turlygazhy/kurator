@@ -295,14 +295,14 @@
             });
         </script>
 
-        <select id="liveType" class="w3-border w3-round-large w3-select">
+        <select id="liveType" name="liveType" class="w3-border w3-round-large w3-select">
             <option selected disabled>Выберите с кем живет студент</option>
             <option value="1">С родителями</option>
             <option value="1">У родственников</option>
             <option value="1">Съемная квартира</option>
             <option value="0">Общежитие</option>
         </select>
-        <select id="dormitory" class="w3-border w3-round-large w3-select" hidden>
+        <select id="dormitory" name="dormitory" class="w3-border w3-round-large w3-select" hidden>
             <option selected disabled>Выберите общежитие</option>
             <option>Общежитие №1</option>
             <option>Армандастар Ордасы</option>
@@ -311,16 +311,115 @@
         </select>
 
         <div id="files" hidden>
-            <h3>File Upload:</h3>
-            Select a file to upload: <br/>
-            <form action="UploadServlet" method="post"
-                  enctype="multipart/form-data">
-                <input type="file" name="file" size="50"/>
-                <br/>
-                <input type="submit" value="Upload File"/>
-            </form>
+            <p/>
+            Скан временной прописки и регистрации в общежитии
+            <input type="file" name="filePropiska" size="50"/>
+            <p/> Скан квитанции об оплате общежития
+            <input type="file" name="fileOplata" size="50"/>
+            <p/>Скан прикрепления к поликлинике
+            <input type="file" name="filePoliclinika" size="50"/>
         </div>
 
+        <p/>Относится ли студент к следующим социальным категориям
+        <p/><input type="checkbox" id="sirota" name="sirota" value="sirota">
+        <label for="sirota"> Сирота</label><br>
+        <input type="checkbox" id="opekaemii" name="opekaemii" value="opekaemii">
+        <label for="opekaemii">Опекаемый</label><br>
+        <input type="checkbox" id="withOutOneParent" name="withOutOneParent" value="withOutOneParent">
+        <label for="withOutOneParent">Без одного родителя-кормильца</label><br>
+        <input type="checkbox" id="chellenged1" name="chellenged1" value="chellenged1">
+        <label for="chellenged1">Инвалид 1 группы</label><br>
+        <input type="checkbox" id="chellenged2" name="chellenged2" value="chellenged2">
+        <label for="chellenged2">Инвалид 2 группы</label><br>
+        <input type="checkbox" id="chellenged3" name="chellenged3" value="chellenged3">
+        <label for="chellenged3">Инвалид 3 группы</label><br>
+        <input type="checkbox" id="bigFamily" name="bigFamily" value="bigFamily">
+        <label for="bigFamily">Из многодетной семьи</label><br>
+        <input type="checkbox" id="chellengedParents" name="chellengedParents" value="chellengedParents">
+        <label for="chellengedParents">Родители-инвалиды</label><br>
+        <input type="checkbox" id="returned" name="returned" value="returned">
+        <label for="returned">Оралман</label><br>
+        <p/>
+
+        <select name="merried" class="w3-border w3-round-large w3-select">
+            <option selected disabled>Выберите семейный статус</option>
+            <option>В браке</option>
+            <option>Холост</option>
+        </select>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+        </script>
+        <script>
+            function showChildCountInput() {
+                if (document.getElementById('haveChild').checked) {
+                    $("#childCount").show();
+                } else {
+                    $("#childCount").hide();
+                }
+            }
+        </script>
+
+        <p/>Есть ли у студента дети
+        <input type="checkbox" id="haveChild" name="haveChild" value="haveChild" onclick="showChildCountInput();">
+        <label for="haveChild">Есть</label><br>
+
+        <label id="childCount" hidden>Количество детей:
+            <input type="text" name="childCount" class="w3-input w3-animate-input w3-border w3-round-large"
+                   style="width: 30%"><br/>
+        </label>
+
+        <p/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#religious').on('change', function () {
+                    if (this.value == 0) {
+                        $("#religion").show();
+                        $("#dressR").show();
+                    } else {
+                        $("#religion").hide();
+                        $("#dressR").hide();
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                $('#religion').on('change', function () {
+                    if (this.value == 0) {
+                        $("#otherR").show();
+                    } else {
+                        $("#otherR").hide();
+                    }
+                });
+            });
+        </script>
+
+        <select id="religious" name="religious" class="w3-border w3-round-large w3-select">
+            <option selected disabled>Верующий ли студент</option>
+            <option value="0">Да</option>
+            <option value="1">Нет</option>
+        </select>
+
+        <select id="religion" name="religion" class="w3-border w3-round-large w3-select" hidden>
+            <option selected disabled>Выберите веру</option>
+            <option value="1">Ислам</option>
+            <option value="1">Христианство</option>
+            <option value="0">Другое</option>
+        </select>
+
+        <select id="dressR" name="dressR" class="w3-border w3-round-large w3-select" hidden>
+            <option selected disabled>Носит ли студент религиозную одежду</option>
+            <option>Да</option>
+            <option>Нет</option>
+        </select>
+
+        <label id="otherR" hidden>Введите веру:
+            <input type="text" name="otherR" class="w3-input w3-animate-input w3-border w3-round-large"
+                   style="width: 30%"><br/>
+        </label>
+
+        <p/>
         <button type="submit" class="w3-btn w3-hover-light-blue w3-border-red w3-round-large">Добавить
         </button>
     </form>

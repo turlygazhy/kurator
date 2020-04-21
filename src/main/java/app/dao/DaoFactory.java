@@ -1,10 +1,7 @@
 package app.dao;
 
 import app.connection_pool.ConnectionPool;
-import app.dao.impl.EventDao;
-import app.dao.impl.KuratorDao;
-import app.dao.impl.NotificationDao;
-import app.dao.impl.UserDao;
+import app.dao.impl.*;
 
 import java.sql.Connection;
 
@@ -38,5 +35,9 @@ public class DaoFactory {
 
     public NotificationDao getNotificationDao() {
         return new NotificationDao(connection);
+    }
+
+    public StudentDao getStudentDao() {
+        return new StudentDao(connection);
     }
 }

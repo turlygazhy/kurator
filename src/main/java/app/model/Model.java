@@ -1,10 +1,7 @@
 package app.model;
 
 import app.dao.DaoFactory;
-import app.dao.impl.EventDao;
-import app.dao.impl.KuratorDao;
-import app.dao.impl.NotificationDao;
-import app.dao.impl.UserDao;
+import app.dao.impl.*;
 import app.entities.*;
 
 import java.io.File;
@@ -22,6 +19,7 @@ public class Model {
     private EventDao eventDao = factory.getEventDao();
     private UserDao userDao = factory.getUserDao();
     private NotificationDao notificationDao = factory.getNotificationDao();
+    private StudentDao studentDao = factory.getStudentDao();
     private LoginedUser loginedUser;
 
     public static Model getInstance() {
@@ -32,7 +30,7 @@ public class Model {
     }
 
     public List<Student> getStudents() {
-        return Arrays.asList(); // TODO: 19.04.20 take from DB
+        return studentDao.selectAll();
     }
 
     public List<Kurator> getKurators() {
@@ -100,5 +98,9 @@ public class Model {
             result.add(obj.getDisplayCountry());
         }
         return result;
+    }
+
+    public void addStudent(Student student) {
+        studentDao.insert(student);
     }
 }
