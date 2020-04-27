@@ -34,7 +34,7 @@ public class AddStudentServlet extends MyServlet {
 //        student.setFileOplata(request.getParameter("fileOplata"));
 //        student.setFilePoliclinika(request.getParameter("filePoliclinika"));
         // TODO: 22.04.20 take files
-        student.setSitota(request.getParameter("sirota"));
+        student.setSirota(request.getParameter("sirota"));
         student.setOpekaemii(request.getParameter("opekaemii"));
         student.setWithOutOneParent(request.getParameter("withOutOneParent"));
         student.setChellenged1(request.getParameter("chellenged1"));
@@ -51,6 +51,7 @@ public class AddStudentServlet extends MyServlet {
         student.setDressR(request.getParameter("dressR"));
         student.setOtherR(request.getParameter("otherR"));
         model.addStudent(student);
+        new StudentsServlet().doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

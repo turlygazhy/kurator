@@ -16,7 +16,7 @@ public class Student {
     private String address;
     private String liveType;
     private String dormitory;
-    private String sitota;
+    private String sirota;
     private String opekaemii;
     private String withOutOneParent;
     private String chellenged1;
@@ -145,12 +145,12 @@ public class Student {
         return dormitory;
     }
 
-    public void setSitota(String sitota) {
-        this.sitota = sitota;
+    public void setSirota(String sirota) {
+        this.sirota = sirota;
     }
 
-    public String getSitota() {
-        return sitota;
+    public String getSirota() {
+        return sirota;
     }
 
     public void setOpekaemii(String opekaemii) {
@@ -271,5 +271,41 @@ public class Student {
 
     public String getOtherR() {
         return otherR;
+    }
+
+    public String getSocialCategory() {
+        StringBuilder sb = new StringBuilder();
+        if (sirota != null) {
+            sb.append("Сирота").append("\n");
+        }
+        if (opekaemii != null) {
+            sb.append("Опекаемый").append("\n");
+        }
+        if (withOutOneParent != null) {
+            sb.append("Без одного родителя-кормильца").append("\n");
+        }
+        if (chellenged1 != null) {
+            sb.append("Инвалид 1 группы").append("\n");
+        }
+        if (chellenged2 != null) {
+            sb.append("Инвалид 2 группы").append("\n");
+        }
+        if (chellenged3 != null) {
+            sb.append("Инвалид 3 группы").append("\n");
+        }
+        if (bigFamily != null) {
+            sb.append("Из многодетной семьи").append("\n");
+        }
+        if (chellengedParents != null) {
+            sb.append("Родители-инвалиды").append("\n");
+        }
+        if (returned != null) {
+            sb.append("Оралман").append("\n");
+        }
+        if (sb.length() > 0) {
+            return sb.toString();
+        } else {
+            return "-";
+        }
     }
 }

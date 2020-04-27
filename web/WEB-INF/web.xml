@@ -52,6 +52,14 @@
         <servlet-name>questionaries</servlet-name>
         <url-pattern>/questionaries</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>reports</servlet-name>
+        <servlet-class>app.servlets.ReportsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>reports</servlet-name>
+        <url-pattern>/reports</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>logout</servlet-name>

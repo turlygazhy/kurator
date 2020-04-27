@@ -17,10 +17,13 @@
     <button onclick="location.href='/questionaries'"
             class="w3-btn w3-hover-green w3-round-large w3-bar-item">Анкетирование
     </button>
+    <button onclick="location.href='/reports'"
+            class="w3-btn w3-hover-green w3-round-large w3-bar-item">Отчеты
+    </button>
     <button onclick="location.href='/logout'"
             class="w3-btn w3-hover-green w3-round-large w3-bar-item"
             style="float: right;">Выход
     </button>
-</div><%--todo новый пункт меню Отчеты (там можно делать выборку, например по соц категории)--%>
+</div>
 </body>
 </html>
