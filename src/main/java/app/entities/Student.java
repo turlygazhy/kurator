@@ -1,5 +1,8 @@
 package app.entities;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Student {
 
     private String lastName;
@@ -32,6 +35,31 @@ public class Student {
     private String religion;
     private String dressR;
     private String otherR;
+
+    private Map<String, String> districts = new HashMap<>();
+    private Map<String, String> liveTypes = new HashMap<>();
+
+    {
+        districts.put("0", "Карагандинская область");
+        districts.put("1", "Акмолинская область");
+        districts.put("2", "Актюбинская область");
+        districts.put("3", "Алматинская область");
+        districts.put("4", "Атырауская область");
+        districts.put("5", "Восточно - Казахстанская область");
+        districts.put("6", "Жамбылская область");
+        districts.put("7", "Западно - Казахстанская область");
+        districts.put("8", "Костанайская область");
+        districts.put("9", "Кызылординская область");
+        districts.put("10", "Мангистауская область");
+        districts.put("11", "Павлодарская область");
+        districts.put("12", "Северо - Казахстанская область");
+        districts.put("13", "Туркестанская область");
+
+        liveTypes.put("1", "С родителями");
+        liveTypes.put("2", "У родственников");
+        liveTypes.put("3", "Съемная квартира");
+        liveTypes.put("0", "Общежитие");
+    }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -110,7 +138,7 @@ public class Student {
     }
 
     public String getDistrict() {
-        return district;
+        return districts.get(district);
     }
 
     public void setCity(String city) {
@@ -134,7 +162,7 @@ public class Student {
     }
 
     public String getLiveType() {
-        return liveType;
+        return liveTypes.get(liveType);
     }
 
     public void setDormitory(String dormitory) {
@@ -246,7 +274,8 @@ public class Student {
     }
 
     public String getReligious() {
-        return religious;
+        if (religious.equals("0")) return "Да";
+        return "Нет";
     }
 
     public void setReligion(String religion) {

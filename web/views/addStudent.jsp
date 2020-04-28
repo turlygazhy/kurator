@@ -298,8 +298,8 @@
         <select id="liveType" name="liveType" class="w3-border w3-round-large w3-select">
             <option selected disabled>Выберите с кем живет студент</option>
             <option value="1">С родителями</option>
-            <option value="1">У родственников</option>
-            <option value="1">Съемная квартира</option>
+            <option value="2">У родственников</option>
+            <option value="3">Съемная квартира</option>
             <option value="0">Общежитие</option>
         </select>
         <select id="dormitory" name="dormitory" class="w3-border w3-round-large w3-select" hidden>
