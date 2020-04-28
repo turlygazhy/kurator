@@ -103,4 +103,8 @@ public class Model {
     public void addStudent(Student student) {
         studentDao.insert(student);
     }
+
+    public List<Student> findStudents(Student student) {
+        return studentDao.selectAll(student);
+    }
 }

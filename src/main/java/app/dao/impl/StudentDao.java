@@ -19,8 +19,12 @@ public class StudentDao {
     }
 
     public List<Student> selectAll() {
+        return selectAllQuery("select * from STUDENT");
+    }
+
+    private List<Student> selectAllQuery(String query) {
         try {
-            PreparedStatement ps = connection.prepareStatement("select * from STUDENT");
+            PreparedStatement ps = connection.prepareStatement(query);
             ps.execute();
             ResultSet rs = ps.getResultSet();
             List<Student> students = new ArrayList<>();
@@ -113,5 +117,65 @@ public class StudentDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public List<Student> selectAll(Student student) {
+        StringBuilder sb = new StringBuilder("select * from STUDENT where ");
+        String district = student.getDistrict();
+        if (district != null) {
+            sb.append("DISTRICT='").append(district).append("' ");
+        }
+        String liveType = student.getLiveType();
+        if (liveType != null) {
+            sb.append("LIVETYPE='").append(liveType).append("' ");
+        }
+        String dormitory = student.getDormitory();
+        if (dormitory != null) {
+            sb.append("DORMITORY='").append(dormitory).append("' ");
+        }
+        String sirota = student.getSirota();
+        if (sirota != null) {
+            sb.append("SITOTA is not null ");
+        }
+        String opekaemii = student.getOpekaemii();
+        if (opekaemii != null) {
+            sb.append("opekaemii is not null ");
+        }
+        String withOutOneParent = student.getWithOutOneParent();
+        if (withOutOneParent != null) {
+            sb.append("withOutOneParent is not null ");
+        }
+        String chellenged1 = student.getChellenged1();
+        if (chellenged1 != null) {
+            sb.append("chellenged1 is not null ");
+        }
+        String chellenged2 = student.getChellenged2();
+        if (chellenged2 != null) {
+            sb.append("chellenged2 is not null ");
+        }
+        String chellenged3 = student.getChellenged3();
+        if (chellenged3 != null) {
+            sb.append("chellenged3 is not null ");
+        }
+        String bigFamily = student.getBigFamily();
+        if (bigFamily != null) {
+            sb.append("bigFamily is not null ");
+        }
+        String chellengedParents = student.getChellengedParents();
+        if (chellengedParents != null) {
+            sb.append("chellengedParents is not null ");
+        }
+        String returned = student.getReturned();
+        if (returned != null) {
+            sb.append("returned is not null ");
+        }
+        String merried = student.getMerried();
+        if (merried != null) {
+            sb.append("merried is not null ");
+        }
+        if (sb.toString().endsWith("where ")) {
+            return selectAll();
+        }
+        return selectAllQuery(sb.toString());
     }
 }
