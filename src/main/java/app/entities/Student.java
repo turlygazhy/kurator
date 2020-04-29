@@ -138,6 +138,9 @@ public class Student {
     }
 
     public String getDistrict() {
+        if (district.length() > 2) {
+            return district;
+        }
         return districts.get(district);
     }
 
