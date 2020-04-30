@@ -60,6 +60,14 @@
         <servlet-name>reports</servlet-name>
         <url-pattern>/reports</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>mydocuments</servlet-name>
+        <servlet-class>app.servlets.MyDocumentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mydocuments</servlet-name>
+        <url-pattern>/mydocuments</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>logout</servlet-name>

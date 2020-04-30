@@ -20,6 +20,9 @@
     <button onclick="location.href='/reports'"
             class="w3-btn w3-hover-green w3-round-large w3-bar-item">Отчеты
     </button>
+    <button onclick="location.href='/mydocuments'"
+            class="w3-btn w3-hover-green w3-round-large w3-bar-item">Мои документы
+    </button>
     <button onclick="location.href='/logout'"
             class="w3-btn w3-hover-green w3-round-large w3-bar-item"
             style="float: right;">Выход

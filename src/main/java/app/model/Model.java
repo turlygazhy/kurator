@@ -107,4 +107,8 @@ public class Model {
     public List<Student> findStudents(Student student) {
         return studentDao.selectAll(student);
     }
+
+    public List<String> getMyDocuments() {
+        return null;// TODO: 01.05.20  
+    }
 }
