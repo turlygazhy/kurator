@@ -9,10 +9,6 @@ import java.util.List;
 
 public class MyDocumentsServlet extends MyServlet {
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<String> myDocuments = model.getMyDocuments();
         req.setAttribute("myDocuments", myDocuments);
