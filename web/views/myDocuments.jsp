@@ -2,7 +2,7 @@
 <%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %>
 <html>
 <head>
-    <title>Анкетирование</title>
+    <title>Мои документы</title>
     <link rel="stylesheet" href="styles/w3.css">
 
 </head>
