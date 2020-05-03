@@ -165,6 +165,9 @@ public class Student {
     }
 
     public String getLiveType() {
+        if (liveType.length() > 2) {
+            return liveType;
+        }
         return liveTypes.get(liveType);
     }
 
