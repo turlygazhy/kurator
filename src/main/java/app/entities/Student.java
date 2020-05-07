@@ -138,6 +138,9 @@ public class Student {
     }
 
     public String getDistrict() {
+        if (district == null) {
+            return null;
+        }
         if (district.length() > 2) {
             return district;
         }
@@ -165,6 +168,9 @@ public class Student {
     }
 
     public String getLiveType() {
+        if (liveType == null) {
+            return null;
+        }
         if (liveType.length() > 2) {
             return liveType;
         }
@@ -280,7 +286,7 @@ public class Student {
     }
 
     public String getReligious() {
-        if (religious.equals("0")) return "Да";
+        if (religious.equals("0") || religious.equals("Да")) return "Да";
         return "Нет";
     }
 
